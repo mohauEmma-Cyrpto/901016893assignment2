@@ -1,0 +1,110 @@
+/* Login Container */
+.login {
+    background-color: #f8f9fa; /* Light background */
+    color: #333; /* Dark color for text */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+  
+  /* Form Title */
+  .login h2 {
+    margin-bottom: 20px;
+    color :#6d6d6d; /* Bright blue color for title */
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  /* Input Fields */
+  .login input[type="text"],
+  .login input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+  
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease;
+  }
+  
+  
+  .login input[type="text"]:focus,
+  .login input[type="password"]:focus {
+    border-color: #ff9900; /* Highlight border on focus */
+  }
+  
+  /* Button */
+  .login button {
+    background-color: #F5F5DC; /* Bright blue color */
+    color: black;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .login button:hover {
+    background-color: #b37400; /* Darker blue on hover */
+  }
+  
+  /* Success Message */
+  .success-message {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #28a745; /* Green for success message */
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Back to Sign Up Button */
+  .back-to-sign-up {
+    background-color: transparent;
+    color: #007BFF;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: color 0.3s;
+  }
+  
+  .back-to-sign-up:hover {
+    color: #0056b3;
+  }
+  
+  /* Social Media Icons Container (if needed in future) */
+  .social-media-icons {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .social-media-icons p {
+    margin-bottom: 10px;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .icon:hover {
+    color: #007bff;
+  }
+  

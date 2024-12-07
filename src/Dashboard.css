@@ -1,0 +1,96 @@
+.dashboard {
+  font-family: 'Arial', sans-serif; /* Modern sans-serif font */
+  padding: 30px;
+  border-radius: 15px; /* Rounded corners for a smooth look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  max-width: 750px;
+  margin: auto;
+  background-color: #FFFAF0; /* Soft light background to evoke warmth */
+  color: #4B4B4B; /* Dark gray text for contrast */
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced hover effect for better depth */
+}
+
+h2 {
+  text-align: center;
+  color: #FF6347; /* Tomato red color to represent the spicy, warm vibe */
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.bar-chart {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  color: #FF4500; /* Strong orange color to attract attention */
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+.image-flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Balanced gap between images */
+  margin: 30px 0;
+  border-radius: 15px;
+  background-color: #FFF4E6; /* Light peach background to complement fried food theme */
+  padding: 10px;
+}
+
+.carousel-image {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow with a slight blur */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.carousel-image:hover {
+  transform: scale(1.1); /* Smooth zoom effect on hover */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Adding a bold shadow effect on hover */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th {
+  background-color: #FFDDC1; /* Soft pastel peach color for headers */
+  color: #D84315; /* A deep orange for a strong contrast */
+  padding: 12px;
+  text-align: left;
+  font-size: 18px;
+  border-radius: 8px; /* Rounded corners for table header */
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #FF6347; /* Tomato red border for rows */
+  text-align: left;
+  font-size: 16px;
+  color: #FF4500; /* Bold orange text for table data */
+}
+
+h6 {
+  font-size: 24px;
+  font-family: 'Arial', Helvetica, sans-serif;
+  margin: 10px 0;
+  color: #FF6347; /* Tomato red color for subheadings */
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #FFF3E0; /* Very light peach color for chart container */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,117 @@
+/* Sign-In Container */
+.sign-in {
+  background-color: rgba(240, 248, 255, 0.85); /* Light blue with transparency */
+  color: #333; /* Dark color for text */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* Form Title */
+.sign-in h2 {
+  margin-bottom: 20px;
+  color: #ff7300; /* Bright blue color for title */
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* Input Fields */
+.sign-in input[type="email"],
+.sign-in input[type="password"] {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease;
+}
+
+.sign-in input[type="email"]:focus,
+.sign-in input[type="password"]:focus {
+  border-color:#F5F5DC; /* Highlight border on focus */
+}
+
+/* Button */
+.sign-in button {
+  background-color :#F5F5DC; /* Bright blue color */
+  color: rgb(26, 25, 25);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.sign-in button:hover {
+  background-color:#F5F5DC; /* Darker blue on hover */
+}
+
+/* Messages */
+.success-message {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #28a745; /* Green for success message */
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.error-message {
+  color: #dc3545; /* Red for error message */
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+
+.social-media-icons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.social-media-icons p {
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: #007bff;
+}
+h3{
+  color:#999999;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sign-in {
+  background-color: #ffffff; /* Light background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 400px;
+  margin: 0 auto;
+}
+h1{
+  text-align: center;
+}
+
