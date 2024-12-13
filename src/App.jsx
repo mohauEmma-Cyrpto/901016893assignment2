@@ -1,73 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import ProductForm from './ProductForm';
-import ProductList from './ProductList';
-import UserManagement from './UserManagement';
-import SignIn from './SignIn';
-import Login from './Login';
-import Logout from './Logout';
-import './App.css';
-import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from './firebaseConfig';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { db } from './firebaseConfig';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from "react-router-dom";
+import Dashboard from "./Dashboard";
+import ProductForm from "./ProductForm";
+import ProductList from "./ProductList";
+import UserManagement from "./UserManagement";
+import Logout from "./Logout";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import "./App.css";
+import { auth, signOut } from "./firebaseConfig";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [isLoginView, setIsLoginView] = useState(true);
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const currentUser = auth.currentUser;
-      if (!currentUser) return;
-
-      try {
-        const userDocRef = doc(db, 'users', currentUser.uid);
-        const userDoc = await getDoc(userDocRef);
-        if (userDoc.exists()) {
-          setUser(userDoc.data());
-        }
-      } catch (error) {
-        console.error("Error fetching user data:", error.message);
+    // Check if the user is logged in when the app loads or refreshes
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user); // User is logged in
+      } else {
+        setUser(null); // No user is logged in
       }
-    };
+    });
 
-    fetchUser();
+    // Clean up the subscription when the component is unmounted
+    return () => unsubscribe();
   }, []);
 
-  const handleSignIn = async (email, password) => {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const loggedInUser = userCredential.user;
-
-      await setDoc(doc(db, 'users', loggedInUser.uid), { lastLogin: new Date() }, { merge: true });
-      setUser(loggedInUser);
-    } catch (error) {
-      console.error("Error signing in:", error.message);
-    }
+  const handleSignIn = (user) => {
+    setUser(user);
   };
 
-  const handleSignUp = async (email, password) => {
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const newUser = userCredential.user;
-
-      await setDoc(doc(db, 'users', newUser.uid), {
-        email: newUser.email,
-        uid: newUser.uid,
-      });
-
-      setUser(newUser);
-    } catch (error) {
-      console.error("Error signing up:", error.message);
-    }
+  const handleSignUp = (user) => {
+    setUser(user);
   };
 
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      setUser(null);
-      setIsLoginView(true);
+      setUser(null); // Clear the user state on logout
     } catch (error) {
       console.error("Error logging out:", error.message);
     }
@@ -81,11 +52,11 @@ function App() {
         </header>
 
         {!user ? (
-          isLoginView ? (
-            <SignIn onSignIn={handleSignIn} />
-          ) : (
-            <Login onSignUp={handleSignUp} />
-          )
+          <Routes>
+            <Route path="/" element={<SignIn onSignIn={handleSignIn} />} />
+            <Route path="/signup" element={<SignUp onSignUp={handleSignUp} />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
         ) : (
           <>
             <Logout onLogout={handleLogout} />

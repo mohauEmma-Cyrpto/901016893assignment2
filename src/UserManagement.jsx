@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { db, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from './firebaseConfig'; // Import Firestore methods
-import './UserManagement.css';
+import { db, collection, addDoc, getDocs, doc, deleteDoc, updateDoc } from './firebaseConfig'; 
 
 const UserManagement = () => {
   const [users, setUsers] = useState([]);
@@ -140,74 +139,94 @@ const UserManagement = () => {
 // Internal styles
 const styles = {
   userManagement: {
-    backgroundColor: '#ffffff', // White background
+    backgroundColor: '#fff5e1', // Soft creamy background reflecting fried chicken
     color: '#333333', // Dark grey text
     padding: '20px',
-    borderRadius: '8px',
-    maxWidth: '600px',
+    borderRadius: '10px', // Rounded corners for a friendly vibe
+    maxWidth: '700px',
     margin: 'auto',
     fontFamily: 'Arial, sans-serif',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Grey shadow
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Softer shadow for depth
   },
   header: {
     textAlign: 'center',
-    color: '#000000', // Black heading color
+    color: '#f39c12', // Golden fried chicken color for header
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    gap: '10px',
+    gap: '15px',
   },
   input: {
-    padding: '10px',
+    padding: '12px',
     width: '80%',
-    borderRadius: '4px',
-    border: '1px solid #CCCCCC', // Light grey border
+    borderRadius: '8px',
+    border: '1px solid #f39c12', // Golden border
+    fontSize: '16px',
+    backgroundColor: '#fff8e1', // Light yellow background for input fields
+    color: '#333333',
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
   },
   button: {
-    padding: '10px 20px',
-    backgroundColor: '#F5F5DC', // Beige button background
-    color: '#333333', // Dark grey text
+    padding: '12px 20px',
+    backgroundColor: '#d35400', // Fried chicken crispy brown color
+    color: '#fff',
     border: 'none',
-    borderRadius: '4px',
+    borderRadius: '8px',
     cursor: 'pointer',
     fontSize: '16px',
+    transition: 'background-color 0.3s', // Smooth transition effect for hover
+  },
+  buttonHover: {
+    backgroundColor: '#e67e22', // Darker shade for hover effect
   },
   successMessage: {
     textAlign: 'center',
-    color: '#28a745', // Green for success
+    color: '#28a745', // Green for success message
     fontWeight: 'bold',
+    fontSize: '18px',
   },
   subHeader: {
     textAlign: 'center',
     color: '#333333', // Dark grey sub-header text
     marginTop: '20px',
+    fontSize: '18px',
+    fontWeight: 'bold',
   },
   table: {
     width: '100%',
     borderCollapse: 'collapse',
-    marginTop: '10px',
+    marginTop: '20px',
   },
   tableHeader: {
-    backgroundColor: '#F5F5DC', // Beige header background
-    color: '#000000', // Black text
-    padding: '10px',
+    backgroundColor: '#f39c12', // Golden header background
+    color: '#fff', // White text
+    padding: '12px',
     fontWeight: 'bold',
-  },
-  tableCell: {
-    padding: '10px',
-    borderBottom: '1px solid #CCCCCC', // Light grey border
     textAlign: 'center',
   },
+  tableCell: {
+    padding: '12px',
+    borderBottom: '1px solid #f39c12', // Soft golden border between rows
+    textAlign: 'center',
+    backgroundColor: '#fff8e1', // Light yellow background for table cells
+  },
   actionButton: {
-    backgroundColor: '#F5F5DC', // Beige button background
-    color: '#000000', // Black text
+    backgroundColor: '#f39c12', // Golden fried chicken button
+    color: '#fff',
     border: 'none',
-    borderRadius: '4px',
-    padding: '5px 10px',
+    borderRadius: '8px',
+    padding: '8px 15px',
     cursor: 'pointer',
     marginLeft: '5px',
+    transition: 'background-color 0.3s', // Smooth transition effect for hover
+  },
+  actionButtonHover: {
+    backgroundColor: '#e67e22', // Darker golden shade for hover effect
   },
 };
 

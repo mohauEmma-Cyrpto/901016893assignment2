@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Productform.css'; 
 import { db, addDoc, collection } from './firebaseConfig'; // Import Firestore methods
 
 const ProductForm = ({ onFormSubmit }) => {
@@ -116,49 +115,52 @@ const styles = {
     fontFamily: 'Arial, sans-serif',
     maxWidth: '600px',
     margin: '0 auto',
-    padding: '20px',
-    backgroundColor: '#fff',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // subtle shadow for depth
+    padding: '30px',
+    backgroundColor: '#fff5e1', // A soft, creamy background resembling fried chicken
+    borderRadius: '10px',
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', // Softer shadow for depth
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '15px',
+    gap: '18px',
   },
   header: {
-    fontSize: '24px',
+    fontSize: '28px',
     textAlign: 'center',
-    color: '#000',
-    marginBottom: '20px', // space between header and form
+    color: '#d35400', // A warm, crispy orange-red color
+    marginBottom: '25px', // More space between header and form for balance
+    fontWeight: 'bold',
+    textTransform: 'uppercase', // Giving it a more bold and attention-grabbing feel
   },
   input: {
-    padding: '12px',
-    margin: '8px 0',
-    borderRadius: '8px', // rounded corners
+    padding: '14px',
+    margin: '10px 0',
+    borderRadius: '8px',
     fontSize: '16px',
-    backgroundColor: '#f9f9f9',
-    color: '#000',
+    backgroundColor: '#fff3e0', // Light fried chicken golden color
+    color: '#333',
     outline: 'none',
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // light shadow for focus effect
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.15)', // Softer shadow for focus effect
   },
   submitButton: {
-    padding: '12px 18px',
-    backgroundColor: '#F5F5DC',
+    padding: '14px 20px',
+    backgroundColor: '#f39c12', // Golden fried chicken color
     border: 'none',
     borderRadius: '8px',
-    color: '#000',
-    fontSize: '16px',
+    color: '#fff',
+    fontSize: '18px',
+    fontWeight: 'bold',
     cursor: 'pointer',
     transition: 'background-color 0.3s',
   },
   submitButtonHover: {
-    backgroundColor: '#cc8400',
+    backgroundColor: '#e67e22', // Darker fried chicken color on hover
   },
   successMessage: {
     marginTop: '20px',
-    padding: '12px',
-    backgroundColor: '#4CAF50',
+    padding: '14px',
+    backgroundColor: '#27ae60', // Fried chicken store success color
     color: '#fff',
     borderRadius: '4px',
     textAlign: 'center',
@@ -166,13 +168,14 @@ const styles = {
   },
   errorMessage: {
     marginTop: '20px',
-    padding: '12px',
-    backgroundColor: '#F5F5DC',
+    padding: '14px',
+    backgroundColor: '#e74c3c', // Red for error messages
     color: '#fff',
     borderRadius: '4px',
     textAlign: 'center',
     fontWeight: 'bold',
-  }
+  },
 };
+
 
 export default ProductForm;

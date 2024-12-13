@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, Legend } from 'recharts';
 import { collection, getDocs } from 'firebase/firestore'; // Firebase functions
 import { db } from './firebaseConfig'; // Import Firestore
+import ProductForm from './ProductForm';
 
 import food1 from './assets/food1.jpg';
 import food2 from './assets/food2.jpg';
@@ -18,10 +19,10 @@ const Dashboard = () => {
 
   const images = [food1, food2, food3, food4, food5, food6];
 
+  // Fetch products from Firebase Firestore
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Fetch data from Firestore collection "products"
         const querySnapshot = await getDocs(collection(db, 'products'));
         const productList = querySnapshot.docs.map((doc) => doc.data());
         setProducts(productList);
@@ -52,57 +53,64 @@ const Dashboard = () => {
     quantity: product.quantity,
   }));
 
-  const styles = {
+  const styles = { 
     dashboard: {
       fontFamily: 'Arial, sans-serif',
-      backgroundColor: 'gray', // White background
-      color: '#333333', // Dark grey text color
-      padding: '20px',
-      borderRadius: '10px',
-      maxWidth: '750px',
+      backgroundColor: '#f9f9f9', 
+      color: '#333333',
+      padding: '30px',
+      borderRadius: '12px',
+      maxWidth: '900px',
       margin: 'auto',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Grey shadow
+      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', 
     },
     heading: {
       textAlign: 'center',
-      color: '#000000', // Black heading color
+      color: '#e67e22', 
+      fontSize: '2.5rem',
+      fontWeight: 'bold',
+      marginBottom: '20px',
     },
     chartContainer: {
       display: 'flex',
       justifyContent: 'center',
-      marginTop: '20px',
+      marginTop: '30px',
     },
     imageFlexContainer: {
       display: 'flex',
       justifyContent: 'center',
-      gap: '30px',
-      margin: '20px 0',
+      gap: '25px',
+      margin: '30px 0',
+      flexWrap: 'wrap', 
     },
     carouselImage: {
-      width: '150px',
-      height: '150px',
+      width: '180px',
+      height: '180px',
       objectFit: 'cover',
       borderRadius: '50%',
-      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.3)', // Grey shadow
-      border: '4px solid #F5F5DC', // Beige border
+      boxShadow: '0 6px 8px rgba(0, 0, 0, 0.2)',
+      border: '4px solid #F5A623',
     },
     table: {
       width: '100%',
       borderCollapse: 'collapse',
-      marginTop: '20px',
+      marginTop: '30px',
+      backgroundColor: '#ffffff', 
     },
     tableHeader: {
-      backgroundColor: 'green', // Beige background
-      color: '#000000', // Black text
+      backgroundColor: '#f39c12', 
+      color: '#ffffff',
       textAlign: 'left',
-      padding: '8px',
+      padding: '12px',
+      fontSize: '1.1rem',
     },
     tableRow: {
-      borderBottom: '1px solid #CCCCCC', // Light grey border
+      borderBottom: '1px solid #eeeeee',
     },
     tableData: {
-      padding: '8px',
-      color: '#333333', // Dark grey text
+      padding: '12px',
+      color: '#333333',
+      textAlign: 'center',
     },
   };
 
@@ -117,7 +125,7 @@ const Dashboard = () => {
           <YAxis stroke="#000000" />
           <Tooltip />
           <Legend />
-          <Bar dataKey="quantity" fill="#BEBEBE" /> {/* Grey bar color */}
+          <Bar dataKey="quantity" fill="#BEBEBE" />
         </BarChart>
       </div>
 
@@ -131,6 +139,9 @@ const Dashboard = () => {
           />
         ))}
       </div>
+
+      {/* Remove the add product functionality */}
+      <ProductForm /> {/* No functionality for adding products */}
 
       <table style={styles.table}>
         <thead>

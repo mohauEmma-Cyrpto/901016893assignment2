@@ -80,12 +80,13 @@ const ProductList = () => {
   const styles = {
     container: {
       fontFamily: 'Arial, sans-serif',
-      color: '#000',
+      color: '#333', // Dark text for better contrast
       maxWidth: '800px',
       margin: '0 auto',
-      padding: '20px',
-      backgroundColor: '#fff',
-      borderRadius: '8px',
+      padding: '25px',
+      backgroundColor: '#fff5e1', // Soft creamy background color resembling fried chicken
+      borderRadius: '10px',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Softer shadow for depth
     },
     table: {
       width: '100%',
@@ -93,36 +94,55 @@ const ProductList = () => {
       borderCollapse: 'collapse',
     },
     tableHeader: {
-      padding: '12px',
+      padding: '16px',
       fontWeight: 'bold',
       textAlign: 'center',
+      backgroundColor: '#f39c12', // Golden fried chicken color
+      color: '#fff', // White text for better readability
+      borderBottom: '2px solid #d35400', // Darker orange border to make header stand out
     },
     tableRow: {
       textAlign: 'center',
+      borderBottom: '1px solid #f39c12', // Adds a soft golden border between rows
     },
     tableData: {
       padding: '12px',
-      color: '#000',
+      color: '#333',
+      backgroundColor: '#fff3e0', // Light golden background for the table rows
     },
     input: {
-      padding: '10px',
+      padding: '12px',
       margin: '15px 0',
       width: '100%',
-      borderRadius: '4px',
-      border: '1px solid #ddd',
-      fontSize: '14px',
+      borderRadius: '8px',
+      border: '1px solid #f39c12', // Golden border to tie into the fried chicken theme
+      fontSize: '16px',
+      backgroundColor: '#fff8e1', // Soft, light yellow background
+      color: '#333',
+      boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)', // Subtle shadow for depth
+    },
+    buttonContainer: {
+      display: 'flex',
+      justifyContent: 'flex-end', // Align buttons to the right
+      gap: '10px', // Space between buttons
+      marginTop: '15px',
     },
     button: {
-      padding: '10px 15px',
+      padding: '12px 18px',
       border: 'none',
-      borderRadius: '4px',
+      borderRadius: '8px',
       cursor: 'pointer',
-      fontSize: '14px',
-      margin: '5px', // Padding between buttons
-      color: '#000',
+      fontSize: '16px',
+      backgroundColor: '#d35400', // Fried chicken crispy brown color
+      color: '#fff',
+      transition: 'background-color 0.3s', // Smooth transition effect for hover
     },
-  };
-
+    buttonHover: {
+      backgroundColor: '#e67e22', // Darker shade for hover effect
+    },
+  };  
+  
+ 
   return (
     <div style={styles.container}>
       <h2>Product List</h2>

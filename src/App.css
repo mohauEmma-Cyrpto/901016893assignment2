@@ -1,63 +1,199 @@
-nav {
-  width: 97%;
-  padding: 0.5rem 2rem;
-  display: flex;
-  justify-content: center; /* Center-aligns the content */
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(179, 15, 15, 0.527);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body {
-  padding-top: 70px;
+  background-color: #f4f4f9;
+  color: #333;
+  font-size: 16px;
 }
 
-ul {
-  list-style-type: none;
+/* Header */
+header {
+  background-color: #f1c40f; /* Chicken yellow */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
   margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
-li a {
+/* Navigation */
+nav {
+  background-color: #34495e; /* Dark grey */
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
-  padding: 10px 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  font-size: 18px;
-  transition: color 0.3s, border-bottom 0.3s;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-li a:hover {
-  color: rgba(102, 100, 98, 0.808);
-  border-bottom: 2px solid  rgba(102, 100, 98, 0.808);
+nav ul li a:hover {
+  background-color: #f1c40f; /* Yellow on hover */
 }
 
-a {
-  color: black;
+/* Auth Screens */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.auth-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f1c40f; /* Chicken yellow */
+}
+
+.auth-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f1c40f; /* Chicken yellow */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #e67e22; /* Orange shade on hover */
+}
+
+.auth-container .error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.auth-container p a {
+  color: #f1c40f;
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 500;
 }
 
-a:hover {
-  color: rgb(109, 13, 13);
+.auth-container p a:hover {
   text-decoration: underline;
-  text-underline-position: under;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center-aligns text within nav */
+/* Logout Button */
+.logout-btn {
+  display: block;
+  background-color: #e74c3c; /* Red */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-h1{
-  color: rgb(221, 212, 194);
+.logout-btn:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Product Form / List */
+.product-form,
+.product-list {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.product-form h2,
+.product-list h2 {
+  font-size: 2rem;
+  color: #f1c40f;
+  margin-bottom: 20px;
+}
+
+.product-form input,
+.product-form button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.product-form button {
+  background-color: #f1c40f;
+  color: white;
+  cursor: pointer;
+}
+
+.product-form button:hover {
+  background-color: #e67e22;
+}
+
+/* Product List Table */
+.product-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-list th,
+.product-list td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.product-list th {
+  background-color: #34495e;
+  color: white;
+}
+
+.product-list tr:hover {
+  background-color: #f9f9f9;
 }
